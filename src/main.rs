@@ -45,10 +45,10 @@ fn main() {
 
     println!("Filtering: {:.3} us", filter_time.elapsed().as_micros());
 
-    println!("Found {} words", words.len());
+    println!("Found {} words\n", words.len());
     for &&w in &words {
         println!("{}", w);
     }
 
-    println!("Total time: {:.3} s", start_time.elapsed().as_secs_f32());
+    println!("\nTotal time: {:.3} s", start_time.elapsed().as_secs_f32());
 }
