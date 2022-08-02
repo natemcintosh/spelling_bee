@@ -1,4 +1,5 @@
 use clap::Parser;
+use rayon::prelude::*;
 use std::{fs, time};
 
 #[derive(Parser)]
@@ -32,7 +33,7 @@ fn main() {
 
     let filter_time = time::Instant::now();
     let mut words: Vec<_> = words
-        .iter()
+        .par_iter()
         .filter(|&w| !w.ends_with("'s"))
         // At least four letters
         .filter(|&w| w.len() >= 4)
